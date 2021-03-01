@@ -1,0 +1,28 @@
+---
+description: "A Basic Rust Tokio archetype"
+authors: ["Jimmie Fulton <jimmie.fulton@gmail.com>"]
+languages: ["Rust"]
+frameworks: ["Tokio"]
+tags: ["async"]
+
+script:
+  - set:
+      name:
+        prompt: "Application Name: "
+      author_full:
+        prompt: "Author: "
+      description:
+        value: ""
+
+      AppName:
+        value: "{{ name | pascal_case }}"
+
+      app_name:
+        value: "{{ name | snake_case }}"
+
+      app-name:
+        value: "{{ name | train_case }}"
+
+  - render:
+      directory:
+        source: "contents"
